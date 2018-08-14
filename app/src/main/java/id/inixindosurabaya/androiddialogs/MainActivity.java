@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     // komponen dalam layout
     private Button btnOpenAlertDialog;
     private Button btnOpenConfirmSingle;
+    private Button btnOpenConfirmMultiple;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         // inisialisasi komponen dalam layout
         btnOpenAlertDialog = findViewById(R.id.btnOpenAlertDialog);
         btnOpenConfirmSingle = findViewById(R.id.btnOpenConfirmSingle);
+        btnOpenConfirmMultiple = findViewById(R.id.btnOpenConfirmMultiple);
 
         // event handling button alert dialog
         btnOpenAlertDialog.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +44,65 @@ public class MainActivity extends AppCompatActivity {
                 openConfirmDialogSingle();
             }
         });
+
+        // event handling button confirm dialog multiple choice
+        btnOpenConfirmMultiple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openConfirmDialogMultiple();
+            }
+        });
+    }
+
+    private void openConfirmDialogMultiple() {
+        // ambil array
+        String[] multipleItems = getResources()
+                .getStringArray(R.array.confirm_multiple);
+        // buat status belum ada yg dicentang
+        final boolean[] itemTerpilih = {
+                false, false, false,
+                false, false, false
+        };
+        // convert array menjadi list
+        final List<String> multipleList =
+                Arrays.asList(multipleItems);
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("DAFTAR FILM")
+                .setMultiChoiceItems(multipleItems,
+                        itemTerpilih,
+                        new DialogInterface.OnMultiChoiceClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                                // ubah status item dari false menjadi true
+                                itemTerpilih[which] = isChecked;
+                                // ambil item yg statusnya true saja
+                                String myItems = multipleList.get(which);
+                                // tampilkan
+                                Toast.makeText(getApplicationContext(),
+                                        "Index film: " + which + "\n" +
+                                        "Judul Film: " + myItems,
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        })
+                .setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                for (int i = 0; i < itemTerpilih.length; i++){
+                                    boolean cek = itemTerpilih[i];
+                                    if (cek) {
+                                        Toast.makeText(getApplicationContext(),
+                                                "Film Pilihan: " +
+                                                multipleList.get(i),
+                                                Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            }
+                        })
+                .setNegativeButton("CANCEL", null)
+                .setCancelable(false)
+                .show();
     }
 
     private void openConfirmDialogSingle() {
