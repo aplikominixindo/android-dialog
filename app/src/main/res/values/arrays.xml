@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="confirm_single">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="confirm_multiple">
+        <item>The Meg</item>
+        <item>The Dark Knight</item>
+        <item>Saving Private Ryan</item>
+        <item>Jack The Giant Slayer</item>
+        <item>Justice League</item>
+        <item>Ant-man and the Wasp</item>
+    </string-array>
+</resources>
