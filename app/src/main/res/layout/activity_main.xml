@@ -54,4 +54,52 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btnOpenListView"
+        android:text="LIST VIEW DIALOG"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@null"
+        android:drawableRight="@drawable/icon_24"
+        android:padding="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnOpenEditText"
+        android:text="EDIT TEXT DIALOG"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@null"
+        android:drawableRight="@drawable/icon_24"
+        android:padding="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnOpenDatePicker"
+        android:text="DATE PICKER DIALOG"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@null"
+        android:drawableRight="@drawable/icon_24"
+        android:padding="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnOpenTimePicker"
+        android:text="TIME PICKER DIALOG"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@null"
+        android:drawableRight="@drawable/icon_24"
+        android:padding="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

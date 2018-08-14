@@ -14,4 +14,25 @@
         <item>Justice League</item>
         <item>Ant-man and the Wasp</item>
     </string-array>
+
+    <string-array name="list_view_dialog">
+        <item>Alberto</item>
+        <item>Silviano</item>
+        <item>Gonzales</item>
+        <item>Jennifer</item>
+        <item>Diego</item>
+        <item>Moreno</item>
+        <item>Sanchez</item>
+        <item>Charles</item>
+        <item>Hugo</item>
+        <item>Mariana</item>
+        <item>Fernando</item>
+        <item>David</item>
+        <item>Hillary</item>
+        <item>Clint</item>
+        <item>Dempsey</item>
+        <item>Roberto</item>
+        <item>Silvester</item>
+        <item>Hernandez</item>
+    </string-array>
 </resources>
